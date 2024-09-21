@@ -15,7 +15,7 @@ export default function UsersTable() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [editedUser, setEditedUser] = useState({});
   
-  const url = 'http://localhost:5000';
+  const url = 'https://backendproyecto-btur.onrender.com';
 
   useEffect(() => {
     async function fetchUsers() {
@@ -180,6 +180,15 @@ export default function UsersTable() {
             value={editedUser.usuario || ''}
             onChange={handleEditChange}
           />
+
+          <TextField
+            margin="dense"
+            label="Clave"
+            name="clave"
+            fullWidth
+            value={editedUser.clave || ''}
+            onChange={handleEditChange}
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseEdit}>Cancelar</Button>
@@ -199,6 +208,7 @@ export default function UsersTable() {
               <p><strong>Nombre:</strong> {selectedUser.nombre}</p>
               <p><strong>Apellido:</strong> {selectedUser.apellido}</p>
               <p><strong>Usuario:</strong> {selectedUser.usuario}</p>
+              <p><strong>Clave:</strong> {selectedUser.clave}</p>
             </>
           )}
         </DialogContent>
