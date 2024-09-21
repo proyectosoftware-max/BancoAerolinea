@@ -15,7 +15,7 @@ export default function UsersTable() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [editedUser, setEditedUser] = useState({});
   
-  const url = 'https://backendproyecto-btur.onrender.com';
+  const url = 'https://backendproyecto-rnu0.onrender.com';
 
   useEffect(() => {
     async function fetchUsers() {

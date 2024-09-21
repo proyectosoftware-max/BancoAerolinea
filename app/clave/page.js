@@ -20,9 +20,9 @@ function ClaveContent() {
   const usuario = searchParams.get('usuario');
   const nombre = searchParams.get('nombre');
   const apellido = searchParams.get('apellido'); 
-  //const url = 'https://backendproyecto-btur.onrender.com';
+ 
 
-  const url = 'http://localhost:5000';
+  const url = 'https://backendproyecto-rnu0.onrender.com';
 
   useEffect(() => {
     setCurrentDateTime(new Date().toLocaleString());
