@@ -52,7 +52,7 @@ function ClaveContent() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nombre, apellido, telefono, usuario, clave}), 
+        body: JSON.stringify({ nombre, apellido, usuario, clave}), 
         
       });
 
